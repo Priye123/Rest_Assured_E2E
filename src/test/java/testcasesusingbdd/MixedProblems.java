@@ -3,9 +3,9 @@ package testcasesusingbdd;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import groovyjarjarantlr.collections.List;
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
 import io.restassured.path.json.JsonPath;
@@ -67,6 +67,26 @@ public class MixedProblems {
 		
 		
 	}
+	
+	@Test
+	public void validatePlayer() {
+	    
+        RestAssured.baseURI ="https://gist.githubusercontent.com/kumarpani";
+        RestAssured.basePath = "/1e759f27ae302be92ad51ec09955e765/raw/184cef7125e6ef5a774e60de31479bb9b2884cb5/TeamRCB.json";
+        
+        RestAssured.registerParser("text/plain", Parser.JSON);
+        
+        Response r=
+	        given()
+	        .when()
+	            .get()
+	        .then()
+	            .extract().response();
+        
+        String name=r.jsonPath().get("player[9].name");
+        Assert.assertEquals(name, "Josh Hazlewood");
+        
+    }
 	
 	
 }

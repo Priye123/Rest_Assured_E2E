@@ -15,10 +15,10 @@ public class PostUsingBDD {
 	
 	@BeforeClass
 	public void postData() {
-		map.put("name",RandomData.getName());
-		map.put("job", RandomData.getJob());
+		map.put("name",RandomData.getName());//name-->PujuASFC
+		map.put("job", RandomData.getJob());//job--> DancerSdx
 		
-		RestAssured.baseURI="https://reqres.in/api";
+		RestAssured.baseURI="https://reqres.in/api";//non-bdd
 		RestAssured.basePath="/users";
 	}
 	
@@ -27,14 +27,15 @@ public class PostUsingBDD {
 		
 		given()
 			.contentType("application/json")
-			.body(map)
+			.body(map) //payload
 		.when()
 			.post()
 		.then()
 			.statusCode(201)
 			.body("name", equalTo(map.get("name")))
-			.and()
 			.body("job", equalTo(map.get("job")));
+//		System.out.println(map.get("name"));
+//		System.out.println(map.get("job"));
 	}
 	
 }

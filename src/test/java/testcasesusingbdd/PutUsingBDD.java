@@ -36,7 +36,7 @@ public class PutUsingBDD {
 			.put()
 		.then()
 			.statusCode(200)
-			.log().all();
+			.log().all();//everything will be printed in console
 		
 	}
 

@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcasesusingbdd.MixedProblems">
+      <class name="jsonschemawithpuju.ValidateJsonSchema">
         <methods>
-          <include name="testsingleContent"/>
+          <include name="tc1"/>
         </methods>
-      </class> <!-- testcasesusingbdd.MixedProblems -->
+      </class> <!-- jsonschemawithpuju.ValidateJsonSchema -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

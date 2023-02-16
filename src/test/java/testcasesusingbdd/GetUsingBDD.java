@@ -16,6 +16,7 @@ public class GetUsingBDD {
 			.statusCode(200)
 			.statusLine("HTTP/1.1 200 OK")
 			.assertThat().body("books[0].isbn", equalTo("9781449325862"))
+			.assertThat().body("books[0].subTitle", equalTo("A Working Introduction"))
 			.header("Content-Type", "application/json; charset=utf-8");
 	}
 }

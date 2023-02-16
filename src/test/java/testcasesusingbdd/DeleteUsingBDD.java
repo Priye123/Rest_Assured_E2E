@@ -22,10 +22,13 @@ public class DeleteUsingBDD {
 		.when()
 			.delete()
 		.then()
-			.statusCode(204)
 			.log().all().extract().response();
 		
-		String jsonToString=response.asPrettyString();
-		System.out.println(jsonToString);
+		int statusCode = response.getStatusCode();
+		Assert.assertEquals(statusCode, 204);
+
+		
+//		String jsonToString=response.asPrettyString();
+//		System.out.println(jsonToString);
 	}
 }

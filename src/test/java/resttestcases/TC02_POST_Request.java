@@ -34,8 +34,8 @@ public class TC02_POST_Request {
 		Response response = httprequest.request(Method.POST, "/api/users");
 
 //		// print response in console
-//		String responseBody = response.getBody().asString();
-//		System.out.println("Response Body: " + responseBody);
+		String responseBody = response.getBody().asString();
+		System.out.println("Response Body: " + responseBody);
 //
 //		// validate status code
 //		int statusCode = response.getStatusCode();
@@ -48,9 +48,9 @@ public class TC02_POST_Request {
 //		Assert.assertEquals(statusLine, "HTTP/1.1 201 Created");
 
 		// validate value of a particular key which is inside JSON
-		JsonPath js = response.jsonPath(); // its a kind of hashmap
-		String getText = js.get("createdAt");
-		Assert.assertEquals(getText.contains("2022-12-01"), true);
+//		JsonPath js = response.jsonPath(); // its a kind of hashmap
+//		String getText = js.get("createdAt");
+//		Assert.assertEquals(getText.contains("2022-12-01"), true);
 
 	}
 

@@ -6,7 +6,7 @@ public class RandomData {
 
 	public static String getName() {
 		String gen = RandomStringUtils.randomAlphabetic(4);
-		return "Puju" + gen;
+		return "Puju" + gen;// PujubFe
 	}
 
 	public static String getJob() {
