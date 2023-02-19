@@ -34,7 +34,7 @@ public class CreateBookingWithSchemaValidator {
 			.post("https://restful-booker.herokuapp.com/booking")
 		.then()
 			//.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("CreateBookingResponseSchema2.json"))
-		//.body(JsonSchemaValidator.matchesJsonSchema(new File("C:\\Users\\priran\\eclipse-workspace\\RestAssuredPractices\\src\\test\\java\\jsonschema\\CreateBookingResponseSchema2.json")))
+		.body(JsonSchemaValidator.matchesJsonSchema(new File("C:\\Users\\priran\\eclipse-workspace\\RestAssuredPractices\\src\\test\\java\\jsonschema\\CreateBookingResponseSchema2.json")))
 		.statusCode(200)
 		//.body("firstname.length()")
 		.log().all().extract().response();

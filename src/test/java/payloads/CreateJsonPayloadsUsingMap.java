@@ -66,7 +66,11 @@ public class CreateJsonPayloadsUsingMap {
 		parent.put("married", false);
 		parent.put("salary", 23.5);
 
-		given().contentType(ContentType.JSON).body(parent).log().all().when().post();
+		given().
+			contentType(ContentType.JSON)
+			.body(parent)
+			.log().all()
+		.when().post();
 
 	}
 
